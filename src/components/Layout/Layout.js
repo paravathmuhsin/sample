@@ -195,12 +195,20 @@ const Layout = () => {
           </Toolbar>
           <Divider />
           <List component="nav">
-            <Link to={'/'}>
+            <Link to={"/"}>
               <ListItemButton>
                 <ListItemIcon>
                   <DashboardIcon />
                 </ListItemIcon>
                 <ListItemText primary="Posts" />
+              </ListItemButton>
+            </Link>
+            <Link to={"/ToDo"}>
+              <ListItemButton>
+                <ListItemIcon>
+                  <DashboardIcon />
+                </ListItemIcon>
+                <ListItemText primary="To-Do" />
               </ListItemButton>
             </Link>
           </List>

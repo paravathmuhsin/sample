@@ -4,17 +4,22 @@ import Fallback from "../../components/Fallback/Fallback";
 import Layout from "../Layout/Layout";
 
 const Home = React.lazy(() => import("../../containers/Home/Home"));
-const PostDetails = React.lazy(() => import("../../containers/Home/PostDetails"));
+const PostDetails = React.lazy(() =>
+  import("../../containers/Home/PostDetails")
+);
 const Login = React.lazy(() => import("../../containers/Login/Login"));
+const ToDo = React.lazy(() => import("../../containers/Home/ToDo"));
 
 const AppRouters = () => {
   return (
     <Suspense fallback={<Fallback />}>
       <Routes>
-        <Route path="/" element={<Layout />} >
-            <Route index element={<Home />} />
-            <Route path="post/:id" element={<PostDetails />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="post/:id" element={<PostDetails />} />
+          <Route path="/Todo" element={<ToDo />} />
         </Route>
+
         <Route path="/login" element={<Login />} />
       </Routes>
     </Suspense>
