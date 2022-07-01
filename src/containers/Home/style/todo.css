@@ -1,0 +1,10 @@
+/* .MuiCard-root {
+  background-color: #afac04;
+  color: black;
+  font-family: cursive;
+} */
+.note {
+  background-color: hsla(59, 74%, 66%, 0.929);
+  color: black;
+  font-family: cursive;
+}

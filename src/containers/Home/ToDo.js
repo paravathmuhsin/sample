@@ -1,18 +1,18 @@
-import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  Grid,
-  Paper,
-  Typography,
-  Item,
-} from "@mui/material";
+import { Grid, Paper, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { getPosts } from "../../services/post.service";
-
+import { getToDos } from "../../services/ToDo.service";
+import { CardActionArea } from "@mui/material";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import "./style/todo.css";
 const ToDo = () => {
+  const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    getToDos().then((data) => {
+      setTodos(data);
+    });
+  }, []);
   return (
     <Grid item xs={12}>
       <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
@@ -23,9 +23,25 @@ const ToDo = () => {
             spacing={{ xs: 2, md: 3 }}
             columns={{ xs: 4, sm: 8, md: 12 }}
           >
-            {Array.from(Array(6)).map((_, index) => (
-              <Grid item xs={2} sm={4} md={4} key={index}>
-                <h1>Item here</h1>
+            {todos.map((item) => (
+              <Grid item xs={2} sm={4} md={4}>
+                <Card sx={{ maxWidth: 345 }}>
+                  <div className="note">
+                    <CardActionArea>
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                          {item.userId}
+                        </Typography>
+                        <Typography gutterBottom variant="h5" component="div">
+                          {item.title}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          {item.completed}
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                  </div>
+                </Card>
               </Grid>
             ))}
           </Grid>

@@ -10,18 +10,17 @@ import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-import Badge from "@mui/material/Badge";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import NotificationsIcon from "@mui/icons-material/Notifications";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import Logout from "@mui/icons-material/Logout";
 import { Avatar, Menu, MenuItem, Tooltip } from "@mui/material";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 
 const drawerWidth = 240;
 
@@ -203,10 +202,11 @@ const Layout = () => {
                 <ListItemText primary="Posts" />
               </ListItemButton>
             </Link>
+
             <Link to={"/ToDo"}>
               <ListItemButton>
                 <ListItemIcon>
-                  <DashboardIcon />
+                  <CheckCircleOutlineIcon />
                 </ListItemIcon>
                 <ListItemText primary="To-Do" />
               </ListItemButton>
