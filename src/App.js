@@ -5,7 +5,7 @@ import AppRouters from "./components/AppRouters/AppRouters";
 function App() {
   return (
     <BrowserRouter>
-      <AppRouters />
+    <AppRouters/>
     </BrowserRouter>
   );
 }
