@@ -200,7 +200,7 @@ const Layout = () => {
                 <ListItemIcon>
                   <DashboardIcon />
                 </ListItemIcon>
-                <ListItemText primary="Posts" />
+                <ListItemText primary="Comments" />
               </ListItemButton>
             </Link>
           </List>

@@ -9,28 +9,28 @@ import {
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { getPost } from "../../services/post.service";
+import { getcomments} from "../../services/comments.service";
 
-const PostDetails = () => {
-  const [post, setPost] = useState(null);
+const CommentDetails = () => {
+  const [Comment, setComments] = useState(null);
   const { id } = useParams();
 
   useEffect(() => {
-    getPost(id).then((data) => {
-      setPost(data);
+    getcomments(id).then((data) => {
+      setComments(data);
     });
   }, []);
 
   return (
     <Grid item xs={12}>
       <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
-        {post ? (
+        {Comment ? (
           <>
             <Typography gutterBottom variant="h5" component="div">
-              {post.title}
+              {Comment.title}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              {post.body}
+              {Comment.body}
             </Typography>
           </>
         ) : null}
@@ -39,4 +39,4 @@ const PostDetails = () => {
   );
 };
 
-export default PostDetails;
+export default CommentDetails;

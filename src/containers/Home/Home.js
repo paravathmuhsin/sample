@@ -9,14 +9,14 @@ import {
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getPosts } from "../../services/post.service";
+import { getcomments } from "../../services/comments.service";
 
 const Home = () => {
-  const [posts, setPosts] = useState([]);
+  const [comments, setcomments] = useState([]);
 
   useEffect(() => {
-    getPosts().then((data) => {
-      setPosts(data);
+    getcomments().then((data) => {
+      setcomments(data);
     });
   }, []);
 
@@ -24,9 +24,9 @@ const Home = () => {
     <Grid item xs={12}>
       <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
         <Typography variant="h4" gutterBottom component="div">
-          Posts
+          Comments
         </Typography>
-        {posts.map((item) => (
+        {comments.map((item) => (
           <Card key={item.id} style={{ marginBottom: "15px" }}>
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
@@ -37,7 +37,7 @@ const Home = () => {
               </Typography>
             </CardContent>
             <CardActions>
-              <Link to={`/post/${item.id}`}>
+              <Link to={`/comment/${item.id}`}>
                 <Button size="small">Learn More</Button>
               </Link>
             </CardActions>
