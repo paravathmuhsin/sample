@@ -9,7 +9,7 @@ const PostDetails = React.lazy(() =>
 );
 const Login = React.lazy(() => import("../../containers/Login/Login"));
 const ToDo = React.lazy(() => import("../../containers/Home/ToDo"));
-
+const ToDoItem = React.lazy(() => import("../../containers/Home/ToDoItem"));
 const AppRouters = () => {
   return (
     <Suspense fallback={<Fallback />}>
@@ -17,7 +17,8 @@ const AppRouters = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="post/:id" element={<PostDetails />} />
-          <Route path="/Todo" element={<ToDo />} />
+          <Route path="/todo" element={<ToDo />} />
+          <Route path="/todo/:id" element={<ToDoItem />} />
         </Route>
 
         <Route path="/login" element={<Login />} />

@@ -203,7 +203,7 @@ const Layout = () => {
               </ListItemButton>
             </Link>
 
-            <Link to={"/ToDo"}>
+            <Link to={"/todo"}>
               <ListItemButton>
                 <ListItemIcon>
                   <CheckCircleOutlineIcon />

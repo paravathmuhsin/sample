@@ -5,6 +5,7 @@ import { CardActionArea } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import "./style/todo.css";
+import { Link } from "react-router-dom";
 const ToDo = () => {
   const [todos, setTodos] = useState([]);
 
@@ -27,33 +28,29 @@ const ToDo = () => {
               <Grid item xs={2} sm={4} md={4}>
                 <Card sx={{ maxWidth: 345 }}>
                   <div className="note">
-                    <CardActionArea>
-                      <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                          <span className="item">{item.userId}</span>
-                        </Typography>
-                        <Typography gutterBottom variant="h5" component="div">
-                          <span className="item">{item.title}</span>
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                          <label className="container">
-                            Status
-                            <input
-                              className="checkBox"
-                              type="checkbox"
-                              checked={true ? item.completed == true : false}
-                            />
-                            <span class="checkmark"></span>
-                          </label>
-                          {/* <label className="status">Status :</label>
-                          <input
-                            className="checkBox"
-                            type="checkbox"
-                            checked={true ? item.completed == true : false}
-                          /> */}
-                        </Typography>
-                      </CardContent>
-                    </CardActionArea>
+                    <Link to={`/todo/${item.id}`}>
+                      <CardActionArea>
+                        <CardContent>
+                          <Typography gutterBottom variant="h5" component="div">
+                            <span className="item">{item.userId}</span>
+                          </Typography>
+                          <Typography gutterBottom variant="h5" component="div">
+                            <span className="item">{item.title}</span>
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            <label className="container">
+                              Status
+                              <input
+                                className="checkBox"
+                                type="checkbox"
+                                checked={true ? item.completed == true : false}
+                              />
+                              <span class="checkmark"></span>
+                            </label>
+                          </Typography>
+                        </CardContent>
+                      </CardActionArea>
+                    </Link>
                   </div>
                 </Card>
               </Grid>
