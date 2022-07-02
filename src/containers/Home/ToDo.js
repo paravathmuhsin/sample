@@ -30,19 +30,27 @@ const ToDo = () => {
                     <CardActionArea>
                       <CardContent>
                         <Typography gutterBottom variant="h5" component="div">
-                          {item.userId}
+                          <span className="item">{item.userId}</span>
                         </Typography>
                         <Typography gutterBottom variant="h5" component="div">
-                          {item.title}
+                          <span className="item">{item.title}</span>
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
-                          <label className="statusText">Status :</label>
-
+                          <label className="container">
+                            Status
+                            <input
+                              className="checkBox"
+                              type="checkbox"
+                              checked={true ? item.completed == true : false}
+                            />
+                            <span class="checkmark"></span>
+                          </label>
+                          {/* <label className="status">Status :</label>
                           <input
                             className="checkBox"
                             type="checkbox"
                             checked={true ? item.completed == true : false}
-                          />
+                          /> */}
                         </Typography>
                       </CardContent>
                     </CardActionArea>
