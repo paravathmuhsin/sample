@@ -36,7 +36,13 @@ const ToDo = () => {
                           {item.title}
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
-                          {item.completed}
+                          <label className="statusText">Status :</label>
+
+                          <input
+                            className="checkBox"
+                            type="checkbox"
+                            checked={true ? item.completed == true : false}
+                          />
                         </Typography>
                       </CardContent>
                     </CardActionArea>
