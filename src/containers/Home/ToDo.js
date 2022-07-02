@@ -28,8 +28,8 @@ const ToDo = () => {
               <Grid item xs={2} sm={4} md={4}>
                 <Card sx={{ maxWidth: 345 }}>
                   <div className="note">
-                    <Link to={`/todo/${item.id}`}>
-                      <CardActionArea>
+                    <CardActionArea>
+                      <Link to={`/todo/${item.id}`}>
                         <CardContent>
                           <Typography gutterBottom variant="h5" component="div">
                             <span className="item">{item.userId}</span>
@@ -43,14 +43,14 @@ const ToDo = () => {
                               <input
                                 className="checkBox"
                                 type="checkbox"
-                                checked={true ? item.completed == true : false}
+                                checked={true ? item.completed === true : false}
                               />
                               <span class="checkmark"></span>
                             </label>
                           </Typography>
                         </CardContent>
-                      </CardActionArea>
-                    </Link>
+                      </Link>
+                    </CardActionArea>
                   </div>
                 </Card>
               </Grid>

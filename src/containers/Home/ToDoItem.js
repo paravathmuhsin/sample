@@ -35,7 +35,7 @@ const PostDetails = () => {
                       <input
                         className="checkBox"
                         type="checkbox"
-                        checked={true ? todo.completed == true : false}
+                        checked={true ? todo.completed === true : false}
                       />
                       <span class="checkmark"></span>
                     </label>
