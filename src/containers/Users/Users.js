@@ -2,11 +2,9 @@ import { Card, CardContent, Grid, Paper, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { getUsers } from "../../services/post.service";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import styles from "./users.css";
-import Button from '@mui/material/Button';
-import DeleteIcon from '@mui/icons-material/Delete';
-import SendIcon from '@mui/icons-material/Send';
-import Stack from '@mui/material/Stack';
+import Button from "@mui/material/Button";
+import SendIcon from "@mui/icons-material/Send";
+import Stack from "@mui/material/Stack";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
@@ -19,9 +17,6 @@ const Users = () => {
 
   return (
     <Grid item xs={12}>
-      <Typography variant="h5" gutterBottom component="div">
-        Users
-      </Typography>
       <Paper
         sx={{
           p: 2,
@@ -30,6 +25,14 @@ const Users = () => {
           justifyContent: "space-between",
         }}
       >
+        <Typography
+          variant="h5"
+          gutterBottom
+          component="div"
+          style={{ width: "100%" }}
+        >
+          Users
+        </Typography>
         {users.map((item) => (
           <Grid item lg={6}>
             <Card
@@ -88,8 +91,12 @@ const Users = () => {
                   {item.company.name},{item.company.catchPhrase},
                   {item.company.bs}
                 </Typography>
-                <Stack direction="row" spacing={2} style={{justifyContent:"flex-end" }}>
-                  <Button variant="contained" endIcon={<SendIcon />} style={{ }}>
+                <Stack
+                  direction="row"
+                  spacing={2}
+                  style={{ justifyContent: "flex-end" }}
+                >
+                  <Button variant="contained" endIcon={<SendIcon />} style={{}}>
                     Activate
                   </Button>
                 </Stack>
