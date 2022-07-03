@@ -60,7 +60,7 @@ const Users = () => {
                 >
                   {item.name}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="text.secondary" style={{ paddingBottom:"10px", fontWeight: 600 }}>
                   {item.username}
                 </Typography>
                 <Typography
