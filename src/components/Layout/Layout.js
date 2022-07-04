@@ -18,6 +18,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import DashboardIcon from "@mui/icons-material/Dashboard";
+import GroupIcon from "@mui/icons-material/Group";
 import Logout from "@mui/icons-material/Logout";
 import { Avatar, Menu, MenuItem, Tooltip } from "@mui/material";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
@@ -202,13 +203,20 @@ const Layout = () => {
                 <ListItemText primary="Posts" />
               </ListItemButton>
             </Link>
-
             <Link to={"/todo"}>
               <ListItemButton>
                 <ListItemIcon>
                   <CheckCircleOutlineIcon />
                 </ListItemIcon>
                 <ListItemText primary="To-Do" />
+              </ListItemButton>
+            </Link>
+            <Link to={"/users"}>
+              <ListItemButton>
+                <ListItemIcon>
+                  <GroupIcon />
+                </ListItemIcon>
+                <ListItemText primary="Users" />
               </ListItemButton>
             </Link>
           </List>

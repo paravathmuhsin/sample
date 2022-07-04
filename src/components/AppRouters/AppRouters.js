@@ -4,6 +4,7 @@ import Fallback from "../../components/Fallback/Fallback";
 import Layout from "../Layout/Layout";
 
 const Home = React.lazy(() => import("../../containers/Home/Home"));
+const Users = React.lazy(() => import("../../containers/Users/Users"));
 const PostDetails = React.lazy(() =>
   import("../../containers/Home/PostDetails")
 );
@@ -19,6 +20,7 @@ const AppRouters = () => {
           <Route path="post/:id" element={<PostDetails />} />
           <Route path="/todo" element={<ToDo />} />
           <Route path="/todo/:id" element={<ToDoItem />} />
+          <Route path="users" element={<Users />} />
         </Route>
 
         <Route path="/login" element={<Login />} />
