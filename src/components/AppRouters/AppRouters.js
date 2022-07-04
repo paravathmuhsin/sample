@@ -8,8 +8,8 @@ const PostDetails = React.lazy(() =>
   import("../../containers/Home/PostDetails")
 );
 const Login = React.lazy(() => import("../../containers/Login/Login"));
-const ToDo = React.lazy(() => import("../../containers/Home/ToDo"));
-const ToDoItem = React.lazy(() => import("../../containers/Home/ToDoItem"));
+const ToDo = React.lazy(() => import("../../containers/ToDo/ToDo"));
+const ToDoItem = React.lazy(() => import("../../containers/ToDo/ToDoItem"));
 const AppRouters = () => {
   return (
     <Suspense fallback={<Fallback />}>

@@ -25,7 +25,7 @@ const ToDo = () => {
             columns={{ xs: 4, sm: 8, md: 12 }}
           >
             {todos.map((item) => (
-              <Grid item xs={2} sm={4} md={4}>
+              <Grid key={item.id} item xs={2} sm={4} md={4}>
                 <Card sx={{ maxWidth: 345 }}>
                   <div className="note">
                     <CardActionArea>
@@ -43,9 +43,10 @@ const ToDo = () => {
                               <input
                                 className="checkBox"
                                 type="checkbox"
-                                checked={true ? item.completed === true : false}
+                                readOnly
+                                checked={item.completed}
                               />
-                              <span class="checkmark"></span>
+                              <span className="checkmark"></span>
                             </label>
                           </Typography>
                         </CardContent>

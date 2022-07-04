@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { getToDo } from "../../services/ToDo.service";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
+import "./style/todo.css";
 
 const PostDetails = () => {
   const [todo, setTodo] = useState(null);
@@ -35,9 +36,10 @@ const PostDetails = () => {
                       <input
                         className="checkBox"
                         type="checkbox"
-                        checked={true ? todo.completed === true : false}
+                        readOnly
+                        checked={todo.completed}
                       />
-                      <span class="checkmark"></span>
+                      <span className="checkmark"></span>
                     </label>
                     {/* <label className="status">Status :</label>
                           <input
