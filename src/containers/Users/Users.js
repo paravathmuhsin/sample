@@ -173,8 +173,8 @@ const Users = () => {
                   spacing={2}
                   style={{ justifyContent: "flex-end" }}
                 >
-                  <Button variant="contained" endIcon={<SendIcon />} style={{}}>
-                    Activate
+                  <Button variant="contained" endIcon={<SendIcon />} style={{fontSize: "12px"}}>
+                    Activate {item.username}
                   </Button>
                 </Stack>
               </CardContent>
