@@ -1,6 +1,6 @@
 import { Grid, Paper, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import { getcomments} from "../../services/comments.service";
 
 const CommentDetails = () => {
