@@ -37,7 +37,7 @@ const UserDetails = () => {
                   endIcon={<SendIcon />}
                   style={{ fontSize: "12px", float : "right" }}
                 >
-                  Go Back
+                  View Users    
                 </Button>
             
             </Typography>
