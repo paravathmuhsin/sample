@@ -4,11 +4,9 @@ import Fallback from "../../components/Fallback/Fallback";
 import Layout from "../Layout/Layout";
 
 const Home = React.lazy(() => import("../../containers/Home/Home"));
-const CommentDetails = React.lazy(() => import("../../containers/Home/CommentDetails"));
+const PostDetails = React.lazy(() => import("../../containers/Home/PostDetails"));
 const Users = React.lazy(() => import("../../containers/Users/Users"));
-const PostDetails = React.lazy(() =>
-  import("../../containers/Home/PostDetails")
-);
+
 const Login = React.lazy(() => import("../../containers/Login/Login"));
 const ToDo = React.lazy(() => import("../../containers/ToDo/ToDo"));
 const ToDoItem = React.lazy(() => import("../../containers/ToDo/ToDoItem"));
