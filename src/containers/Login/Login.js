@@ -27,10 +27,10 @@ export default function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
     // API call for checking authentication
-    if(form.email === 'test@gmail.com' && form.password === '12345'){
-      nav('/')
+    if (form.email === "test@gmail.com" && form.password === "12345") {
+      nav("/");
     } else {
-      alert('Invalid credentials')
+      alert("Invalid credentials");
     }
   };
 

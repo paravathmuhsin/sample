@@ -1,14 +1,6 @@
-import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  Grid,
-  Paper,
-  Typography,
-} from "@mui/material";
+import { Grid, Paper, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getPost } from "../../services/post.service";
 
 const PostDetails = () => {
@@ -19,7 +11,7 @@ const PostDetails = () => {
     getPost(id).then((data) => {
       setPost(data);
     });
-  }, []);
+  }, [id]);
 
   return (
     <Grid item xs={12}>
