@@ -37,7 +37,7 @@ const Users = () => {
           Users
         </Typography>
         {users.map((item) => (
-          <Grid item lg={4}>
+          <Grid key={item.id} item lg={4}>
             <Card
               key={item.id}
               style={{ margin: "15px", background: "#fdfdfd", height: "520px" }}
