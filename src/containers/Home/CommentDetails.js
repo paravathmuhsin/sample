@@ -1,12 +1,4 @@
-import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  Grid,
-  Paper,
-  Typography,
-} from "@mui/material";
+import { Grid, Paper, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getcomments} from "../../services/comments.service";
@@ -19,7 +11,7 @@ const CommentDetails = () => {
     getcomments(id).then((data) => {
       setComments(data);
     });
-  }, []);
+  }, [id]);
 
   return (
     <Grid item xs={12}>
