@@ -25,10 +25,10 @@ const PostDetails = () => {
               <div className="note">
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
-                    <span className="item">{todo.userId}</span>
+                    <span className="item">User ID: {todo.userId}</span>
                   </Typography>
                   <Typography gutterBottom variant="h5" component="div">
-                    <span className="item">{todo.title}</span>
+                    <span className="item">Description: {todo.title}</span>
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
                     <label className="container">

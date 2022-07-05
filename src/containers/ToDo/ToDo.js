@@ -32,10 +32,12 @@ const ToDo = () => {
                       <Link to={`/todo/${item.id}`}>
                         <CardContent>
                           <Typography gutterBottom variant="h5" component="div">
-                            <span className="item">{item.userId}</span>
+                            <span className="item">User ID: {item.userId}</span>
                           </Typography>
                           <Typography gutterBottom variant="h5" component="div">
-                            <span className="item">{item.title}</span>
+                            <span className="item">
+                              Description: {item.title}
+                            </span>
                           </Typography>
                           <Typography variant="body2" color="text.secondary">
                             <label className="container">
