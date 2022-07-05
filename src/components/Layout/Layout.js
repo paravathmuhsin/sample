@@ -1,5 +1,6 @@
 import * as React from "react";
-import { Outlet, useNavigate, Link } from "react-router-dom";
+import { Outlet, useNavigate, Link, Navigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import { styled, createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import MuiDrawer from "@mui/material/Drawer";
@@ -74,6 +75,8 @@ const mdTheme = createTheme();
 const Layout = () => {
   const [open, setOpen] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const isLoggedin = useSelector((state) => state.login.isLoggedin);
+  const dispatch = useDispatch();
   const nav = useNavigate();
   const openMenu = Boolean(anchorEl);
   const toggleDrawer = () => {
@@ -87,10 +90,15 @@ const Layout = () => {
   };
 
   const logout = () => {
+    localStorage.removeItem("isLoggedin");
+    localStorage.removeItem("loggedUser");
+    dispatch({
+      type: "SET_LOGOUT",
+    });
     nav("/login");
   };
 
-  return (
+  return isLoggedin ? (
     <ThemeProvider theme={mdTheme}>
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
@@ -242,6 +250,8 @@ const Layout = () => {
         </Box>
       </Box>
     </ThemeProvider>
+  ) : (
+    <Navigate to={"/login"} />
   );
 };
 
