@@ -8,16 +8,26 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { getPosts } from "../../services/post.service";
+import { useAppContext } from "../../components/AppContextProvider/AppContextProvider";
+import { getPostsAction } from "../../store/actions/post.action";
+// import { getPosts } from "../../services/post.service";
 
 const Home = () => {
-  const [posts, setPosts] = useState([]);
+  const posts = useSelector((state) => state.post.posts);
+  const { setAppTitle } = useAppContext();
+  const dispatch = useDispatch();
+  // const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    getPosts().then((data) => {
-      setPosts(data);
-    });
+    setAppTitle('Posts')
+    if (!posts.length) {
+      dispatch(getPostsAction());
+    }
+    // getPosts().then((data) => {
+    //   setPosts(data);
+    // });
   }, []);
 
   return (
