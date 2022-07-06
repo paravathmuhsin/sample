@@ -8,3 +8,6 @@ export const getPost = (id) =>
 
   export const getUsers = () =>
   axiosInstance.get("/users").then((res) => res.data);
+
+  export const getComments = () =>
+  axiosInstance.get("/comments").then((res) => res.data);

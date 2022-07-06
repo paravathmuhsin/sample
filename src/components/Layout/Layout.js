@@ -21,6 +21,7 @@ import ListItemText from "@mui/material/ListItemText";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import GroupIcon from "@mui/icons-material/Group";
 import Logout from "@mui/icons-material/Logout";
+import AddCommentIcon from '@mui/icons-material/AddComment';
 import { Avatar, Menu, MenuItem, Tooltip } from "@mui/material";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import { logoutAction } from "../../store/actions/login.action";
@@ -226,6 +227,14 @@ const Layout = () => {
                   <GroupIcon />
                 </ListItemIcon>
                 <ListItemText primary="Users" />
+              </ListItemButton>
+            </Link>
+            <Link to={"/comments"}>
+              <ListItemButton>
+                <ListItemIcon>
+                  <AddCommentIcon/>
+                </ListItemIcon>
+                <ListItemText primary="Comments" />
               </ListItemButton>
             </Link>
           </List>
