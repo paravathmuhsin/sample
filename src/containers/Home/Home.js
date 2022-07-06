@@ -12,7 +12,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { useAppContext } from "../../components/AppContextProvider/AppContextProvider";
 import { getPostsAction } from "../../store/actions/post.action";
-// import { getPosts } from "../../services/post.service";
+import { getPosts } from "../../services/post.service";
 
 const Home = () => {
   const posts = useSelector((state) => state.post.posts);

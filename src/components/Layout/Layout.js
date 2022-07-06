@@ -209,7 +209,7 @@ const Layout = () => {
                 <ListItemIcon>
                   <DashboardIcon />
                 </ListItemIcon>
-                <ListItemText primary="Comments" />
+                <ListItemText primary="Posts" />
               </ListItemButton>
             </Link>
             <Link to={"/todo"}>
