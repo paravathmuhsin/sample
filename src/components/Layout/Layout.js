@@ -24,6 +24,7 @@ import Logout from "@mui/icons-material/Logout";
 import { Avatar, Menu, MenuItem, Tooltip } from "@mui/material";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import { logoutAction } from "../../store/actions/login.action";
+import { useAppContext } from "../AppContextProvider/AppContextProvider";
 
 const drawerWidth = 240;
 
@@ -78,6 +79,7 @@ const Layout = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const isLoggedin = useSelector((state) => state.login.isLoggedin);
   const dispatch = useDispatch();
+  const { appTitle } = useAppContext();
   const nav = useNavigate();
   const openMenu = Boolean(anchorEl);
   const toggleDrawer = () => {
@@ -126,7 +128,7 @@ const Layout = () => {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Dashboard
+              {appTitle}
             </Typography>
             <Tooltip title="Account settings">
               <IconButton

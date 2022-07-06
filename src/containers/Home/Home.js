@@ -10,15 +10,18 @@ import {
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { useAppContext } from "../../components/AppContextProvider/AppContextProvider";
 import { getPostsAction } from "../../store/actions/post.action";
 // import { getPosts } from "../../services/post.service";
 
 const Home = () => {
   const posts = useSelector((state) => state.post.posts);
+  const { setAppTitle } = useAppContext();
   const dispatch = useDispatch();
   // const [posts, setPosts] = useState([]);
 
   useEffect(() => {
+    setAppTitle('Posts')
     if (!posts.length) {
       dispatch(getPostsAction());
     }
