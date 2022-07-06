@@ -1,14 +1,16 @@
+import { SET_LOGIN, SET_LOGOUT } from "../types/login.type";
+
 const initilaState = {
-  isLoggedin: Boolean(localStorage.getItem('isLoggedin')),
-  loggedUser: JSON.parse(localStorage.getItem('loggedUser')),
+  isLoggedin: Boolean(localStorage.getItem("isLoggedin")),
+  loggedUser: JSON.parse(localStorage.getItem("loggedUser")),
 };
 
 const loginReducer = (state = initilaState, action) => {
   switch (action.type) {
-    case "SET_LOGIN":
+    case SET_LOGIN:
       return { ...state, isLoggedin: true, loggedUser: action.payload };
 
-    case "SET_LOGOUT":
+    case SET_LOGOUT:
       return { ...state, isLoggedin: false, loggedUser: null };
 
     default:

@@ -23,6 +23,7 @@ import GroupIcon from "@mui/icons-material/Group";
 import Logout from "@mui/icons-material/Logout";
 import { Avatar, Menu, MenuItem, Tooltip } from "@mui/material";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import { logoutAction } from "../../store/actions/login.action";
 
 const drawerWidth = 240;
 
@@ -92,9 +93,7 @@ const Layout = () => {
   const logout = () => {
     localStorage.removeItem("isLoggedin");
     localStorage.removeItem("loggedUser");
-    dispatch({
-      type: "SET_LOGOUT",
-    });
+    dispatch(logoutAction());
     nav("/login");
   };
 
