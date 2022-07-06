@@ -10,6 +10,7 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Navigate, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { loginAction } from "../../store/actions/login.action";
 
 const theme = createTheme();
 
@@ -34,10 +35,7 @@ export default function Login() {
         name: "Muhsin",
         email: "test@gmail.com",
       };
-      dispatch({
-        type: "SET_LOGIN",
-        payload: user,
-      });
+      dispatch(loginAction(user));
       localStorage.setItem("isLoggedin", true);
       localStorage.setItem("loggedUser", JSON.stringify(user));
       nav("/");

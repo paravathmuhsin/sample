@@ -1,13 +1,16 @@
 import { Grid, Paper, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useAppContext } from "../../components/AppContextProvider/AppContextProvider";
 import { getPost } from "../../services/post.service";
 
 const PostDetails = () => {
   const [post, setPost] = useState(null);
+  const { setAppTitle } = useAppContext();
   const { id } = useParams();
 
   useEffect(() => {
+    setAppTitle('Post Details')
     getPost(id).then((data) => {
       setPost(data);
     });
