@@ -2,30 +2,30 @@ import { Grid, Paper, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useAppContext } from "../../components/AppContextProvider/AppContextProvider";
-import { getPost } from "../../services/post.service";
+import { getComments } from "../../services/Comments.service";
 
-const PostDetails = () => {
-  const [post, setPost] = useState(null);
+const CommentsDetails = () => {
+  const [comments, setComments] = useState(null);
   const { setAppTitle } = useAppContext();
   const { id } = useParams();
 
   useEffect(() => {
-    setAppTitle('Post Details')
-    getPost(id).then((data) => {
-      setPost(data);
+    setAppTitle('Comments Details')
+    getComments(id).then((data) => {
+      setComments(data);
     });
   }, [id]);
 
   return (
     <Grid item xs={12}>
       <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
-        {post ? (
+        {comments ? (
           <>
             <Typography gutterBottom variant="h5" component="div">
-              {post.title}
+              {comments.title}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              {post.body}
+              {CommentsDetails.body}
             </Typography>
           </>
         ) : null}
@@ -34,4 +34,4 @@ const PostDetails = () => {
   );
 };
 
-export default PostDetails;
+export default CommentsDetails;
