@@ -5,6 +5,7 @@ import Layout from "../Layout/Layout";
 
 const Home = React.lazy(() => import("../../containers/Home/Home"));
 const Users = React.lazy(() => import("../../containers/Users/Users"));
+const UserDetails = React.lazy(() => import("../../containers/Users/UserDetails"));
 const PostDetails = React.lazy(() =>
   import("../../containers/Home/PostDetails")
 );
@@ -21,6 +22,7 @@ const AppRouters = () => {
           <Route path="/todo" element={<ToDo />} />
           <Route path="/todo/:id" element={<ToDoItem />} />
           <Route path="users" element={<Users />} />
+          <Route path="/Users/:id" element={<UserDetails />} />
         </Route>
 
         <Route path="/login" element={<Login />} />

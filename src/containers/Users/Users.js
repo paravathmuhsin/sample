@@ -1,13 +1,11 @@
 import { Card, CardContent, Grid, Paper, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { getUsers } from "../../services/post.service";
+import { getUsers } from "../../services/User.service";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
 import Stack from "@mui/material/Stack";
-import EmailIcon from "@mui/icons-material/Email";
-import PhoneIcon from '@mui/icons-material/Phone';
-import WebIcon from '@mui/icons-material/Web';
+import { Link } from "react-router-dom";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
@@ -40,7 +38,7 @@ const Users = () => {
           <Grid key={item.id} item lg={4}>
             <Card
               key={item.id}
-              style={{ margin: "15px", background: "#fdfdfd", height: "520px" }}
+              style={{ margin: "15px", background: "#fdfdfd" }}
             >
               <CardContent>
                 <div style={{ textAlign: "center" }}>
@@ -56,126 +54,21 @@ const Users = () => {
                   gutterBottom
                   variant="h6"
                   component="div"
-                  style={{ textAlign: "center" }}
+                  style={{ textAlign: "center", fontSize: "16px", fontWeight: "600" }}
                 >
                   {item.name}
                 </Typography>
-                <Typography variant="body2" color="text.secondary" style={{ paddingBottom:"10px", fontWeight: 600 }}>
-                  {item.username}
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  style={{ display: "flex" }}
-                >
-                  <EmailIcon
-                    style={{
-                      color: "",
-                      fontSize: "18px",
-                      alignItems: "center",
-                      marginRight: "10px",
-                    }}
-                  />{" "}
-                  {item.email}
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  style={{ display: "flex" }}
-                >
-                  <PhoneIcon
-                    style={{
-                      color: "",
-                      fontSize: "18px",
-                      alignItems: "center",
-                      marginRight: "10px",
-                    }}
-                  />{" "}
-                  {item.phone}
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  style={{ display: "flex" }}
-                >
-                  <WebIcon
-                    style={{
-                      color: "",
-                      fontSize: "18px",
-                      alignItems: "center",
-                      marginRight: "10px",
-                    }}
-                  />{" "}
-                  {item.website}
-                </Typography>
-                <Paper
-                  sx={{
-                    p: 0,
-                    marginTop: 2,
-                    marginBottom: 2,
-                    display: "flex",
-                    flexWrap: "wrap",
-                    background: "#fdfdfd",
-                    justifyContent: "space-between",
-                  }}
-                >
-                  <Grid item lg={6}>
-                    <Card
-                      key={item.id}
-                      style={{
-                        padding: "0px",
-                        marginTop: "1px",
-                        background: "#fdfdfd",
-                        height: "210px",
-                      }}
-                    >
-                      <CardContent>
-                        <Typography variant="body2" color="text.secondary">
-                          <strong>Address:</strong>
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                          {item.address.street}, {item.address.suite},{" "}
-                          {item.address.suite}, {item.address.city},{" "}
-                          {item.address.zipcode}, {item.address.geo.lat},{" "}
-                          {item.address.geo.lng}.
-                        </Typography>
-                      </CardContent>
-                    </Card>
-                  </Grid>
-                  <Grid item lg={6}>
-                    <Card
-                      key={item.id}
-                      style={{
-                        padding: "0px",
-                        marginTop: "1px",
-                        background: "#fdfdfd",
-                        height: "210px",
-                      }}
-                    >
-                      <CardContent>
-                        <Typography variant="body2" color="text.secondary">
-                          <strong>Company Details:</strong>
-                        </Typography>
-                        <Typography
-                          variant="body2"
-                          color="text.secondary"
-                          style={{ fontSize: "14px" }}
-                        >
-                          {item.company.name},{item.company.catchPhrase},
-                          {item.company.bs}
-                        </Typography>
-                      </CardContent>
-                    </Card>
-                  </Grid>
-                </Paper>
+                
                 <Stack
                   direction="row"
                   spacing={2}
-                  style={{ justifyContent: "flex-end" }}
+                  style={{ justifyContent: "center" }}
                 >
+                <Link to={`/Users/${item.id}`}  style={{textDecorationLine:"none"}}> 
                   <Button variant="contained" endIcon={<SendIcon />} style={{fontSize: "12px"}}>
-                    Activate {item.username}
-                  </Button>
+                    View More
+                </Button>
+                  </Link>   
                 </Stack>
               </CardContent>
             </Card>
