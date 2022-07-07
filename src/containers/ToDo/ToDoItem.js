@@ -5,12 +5,14 @@ import { getToDo } from "../../services/ToDo.service";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import "./style/todo.css";
+import { useAppContext } from "../../components/AppContextProvider/AppContextProvider";
 
 const PostDetails = () => {
   const [todo, setTodo] = useState(null);
   const { id } = useParams();
-
+  const { setAppTitle } = useAppContext();
   useEffect(() => {
+    setAppTitle("ToDo Item");
     getToDo(id).then((data) => {
       setTodo(data);
     });

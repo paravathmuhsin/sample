@@ -6,10 +6,12 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import "./style/todo.css";
 import { Link } from "react-router-dom";
+import { useAppContext } from "../../components/AppContextProvider/AppContextProvider";
 const ToDo = () => {
   const [todos, setTodos] = useState([]);
-
+  const { setAppTitle } = useAppContext();
   useEffect(() => {
+    setAppTitle("ToDo");
     getToDos().then((data) => {
       setTodos(data);
     });
