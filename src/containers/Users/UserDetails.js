@@ -20,7 +20,7 @@ const UserDetails = () => {
   }, [id]);
 
   return (
-    <Grid userDetails xs={12}>
+    <Grid item xs={12}>
       <Paper sx={{ p: 2, m: 2, display: "flex", flexDirection: "column" }}>
         {userDetails ? (
           <>
@@ -31,18 +31,17 @@ const UserDetails = () => {
               style={{ marginBottom: "20px", fontWeight: "600" }}
             >
               {userDetails.name}
-              
-                <Button
-                  variant="contained"
-                  endIcon={<SendIcon />}
-                  style={{ fontSize: "12px", float : "right" }}
-                >
-                  View Users    
-                </Button>
-            
+
+              <Button
+                variant="contained"
+                endIcon={<SendIcon />}
+                style={{ fontSize: "12px", float: "right" }}
+              >
+                View Users
+              </Button>
             </Typography>
             <Grid container spacing={{ xs: 2, md: 3 }} columns={{ md: 12 }}>
-              <Grid key={userDetails.id} item md={3}>
+              <Grid item md={3}>
                 <Card
                   sx={{ maxWidth: 345 }}
                   style={{ padding: "15px", height: "180px" }}
@@ -70,7 +69,7 @@ const UserDetails = () => {
                 </Card>
               </Grid>
 
-              <Grid key={userDetails.id} item md={3}>
+              <Grid item md={3}>
                 <Card
                   sx={{ maxWidth: 345 }}
                   style={{ padding: "15px", height: "180px" }}
@@ -122,7 +121,7 @@ const UserDetails = () => {
                   </Typography>
                 </Card>
               </Grid>
-              <Grid key={userDetails.id} item md={3}>
+              <Grid item md={3}>
                 <Card
                   sx={{ maxWidth: 345 }}
                   style={{ padding: "15px", height: "180px" }}
@@ -141,7 +140,7 @@ const UserDetails = () => {
                   </CardContent>
                 </Card>
               </Grid>
-              <Grid key={userDetails.id} item md={3}>
+              <Grid item md={3}>
                 <Card
                   sx={{ maxWidth: 345 }}
                   style={{ padding: "15px", height: "180px" }}

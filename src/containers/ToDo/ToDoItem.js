@@ -16,7 +16,8 @@ const PostDetails = () => {
     getToDo(id).then((data) => {
       setTodo(data);
     });
-  }, [id]);
+    setAppTitle("ToDo Item");
+  }, [id, setAppTitle]);
 
   return (
     <Grid item xs={12}>

@@ -15,7 +15,7 @@ const ToDo = () => {
     getToDos().then((data) => {
       setTodos(data);
     });
-  }, []);
+  }, [setAppTitle]);
   return (
     <Grid item xs={12}>
       <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
