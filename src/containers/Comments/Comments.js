@@ -25,7 +25,7 @@ const CommentsDetails = () => {
               {comments.title}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              {CommentsDetails.body}
+              {comments.body}
             </Typography>
           </>
         ) : null}
