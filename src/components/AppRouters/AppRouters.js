@@ -11,8 +11,10 @@ const UserDetails = React.lazy(() => import("../../containers/Users/UserDetails"
 const Login = React.lazy(() => import("../../containers/Login/Login"));
 const ToDo = React.lazy(() => import("../../containers/ToDo/ToDo"));
 const ToDoItem = React.lazy(() => import("../../containers/ToDo/ToDoItem"));
-const Comments=React.lazy(()=>import("../../containers/Comments/Comments"))
 
+
+const Comments = React.lazy(() => import("../../containers/Comments/Comment"));
+const CommentsDetails = React.lazy(() => import("../../containers/Comments/CommentsDetails"));
 const AppRouters = () => {
   return (
     <Suspense fallback={<Fallback />}>
@@ -24,7 +26,10 @@ const AppRouters = () => {
           <Route path="/todo/:id" element={<ToDoItem />} />
           <Route path="users" element={<Users />} />
           <Route path="/Users/:id" element={<UserDetails />} />
-          <Route path="/comments" element={<Comments />} />
+          <Route path="comments" element={<Comments />} />
+          <Route path="/Comments/:id" element={<CommentsDetails />} />
+          
+          
         </Route>
 
         <Route path="/login" element={<Login />} />

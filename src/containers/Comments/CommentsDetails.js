@@ -22,7 +22,7 @@ const CommentsDetails = () => {
         {comments ? (
           <>
             <Typography gutterBottom variant="h5" component="div">
-              {comments.title}
+              {comments.name}
             </Typography>
             <Typography variant="body2" color="text.secondary">
               {comments.body}
