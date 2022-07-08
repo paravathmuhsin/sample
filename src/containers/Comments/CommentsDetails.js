@@ -2,7 +2,7 @@ import { Grid, Paper, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useAppContext } from "../../components/AppContextProvider/AppContextProvider";
-import { getComments } from "../../services/Comments.service";
+import { getCommentsDetails } from "../../services/Comments.service";
 
 const CommentsDetails = () => {
   const [comments, setComments] = useState(null);
@@ -10,8 +10,8 @@ const CommentsDetails = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    setAppTitle('Comments Details')
-    getComments(id).then((data) => {
+    setAppTitle("Comments Details");
+    getCommentsDetails(id).then((data) => {
       setComments(data);
     });
   }, [id]);

@@ -11,7 +11,7 @@ import {
   import { useSelector, useDispatch } from "react-redux";
   import { Link } from "react-router-dom";
   import { useAppContext } from "../../components/AppContextProvider/AppContextProvider";
-  import { getComments } from "../../services/comments.service";
+import { getCommentsAction } from "../../store/actions/comments.action";
   
   const Comments = () => {
     const comments = useSelector((state) => state.comments.comments);
