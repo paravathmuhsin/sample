@@ -1,6 +1,6 @@
 import { Card, CardContent, Grid, Paper, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import {  useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getUsersDetails } from "../../services/User.service";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import EmailIcon from "@mui/icons-material/Email";
@@ -16,7 +16,7 @@ const UserDetails = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    setAppTitle('User Details')
+    setAppTitle("User Details");
     getUsersDetails(id).then((data) => {
       setUserDetails(data);
     });
@@ -35,13 +35,13 @@ const UserDetails = () => {
             >
               {userDetails.name}
               <Link to={`/users`}>
-              <Button
-                variant="contained"
-                endIcon={<SendIcon />}
-                style={{ fontSize: "12px", float: "right" }}
-              >
-                View Users
-              </Button>
+                <Button
+                  variant="contained"
+                  endIcon={<SendIcon />}
+                  style={{ fontSize: "12px", float: "right" }}
+                >
+                  View Users
+                </Button>
               </Link>
             </Typography>
             <Grid container spacing={{ xs: 2, md: 3 }} columns={{ md: 12 }}>
