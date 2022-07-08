@@ -1,0 +1,101 @@
+/* .MuiCard-root {
+  background-color: #afac04;
+  color: black;
+  font-family: cursive;
+} */
+/* ...............Note Color............*/
+.note {
+  background-color: hsla(59, 74%, 66%, 0.929);
+}
+
+.item {
+  color: rgb(0, 0, 0);
+  font-family: cursive;
+  cursor: default;
+  pointer-events: none;
+  text-decoration: none;
+}
+
+/* 
+.checkBox {
+  display: grid;
+  place-content: center;
+}
+
+.checkBox::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+}
+
+.checkBox:checked::before {
+  transform: scale(1);
+} */
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: cursive;
+  font-weight: bold;
+  cursor: default;
+  pointer-events: none;
+  text-decoration: none;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #e25454;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: rgba(131, 233, 120, 0.868);
+}
+
+.container input:checked ~ .checkmark {
+  background-color: rgba(131, 233, 120, 0.868);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid rgb(0, 0, 0);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
