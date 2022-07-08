@@ -5,4 +5,3 @@ export const getPosts = () =>
 
 export const getPost = (id) =>
   axiosInstance.get(`/posts/${id}`).then((res) => res.data);
-

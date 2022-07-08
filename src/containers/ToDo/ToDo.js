@@ -1,15 +1,13 @@
 import { Grid, Paper, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { getToDos } from "../../services/ToDo.service";
-import { CardActionArea } from "@mui/material";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import "./style/todo.css";
-import { Link } from "react-router-dom";
+import { useAppContext } from "../../components/AppContextProvider/AppContextProvider";
+import StickyComponent from "../../components/StickyComponent/StickyComponent";
 const ToDo = () => {
   const [todos, setTodos] = useState([]);
-
+  const { setAppTitle } = useAppContext();
   useEffect(() => {
+    setAppTitle("ToDo");
     getToDos().then((data) => {
       setTodos(data);
     });
@@ -26,34 +24,7 @@ const ToDo = () => {
           >
             {todos.map((item) => (
               <Grid key={item.id} item xs={2} sm={4} md={4}>
-                <Card sx={{ maxWidth: 345 }}>
-                  <div className="note">
-                    <CardActionArea>
-                      <Link to={`/todo/${item.id}`}>
-                        <CardContent>
-                          <Typography gutterBottom variant="h5" component="div">
-                            <span className="item">{item.userId}</span>
-                          </Typography>
-                          <Typography gutterBottom variant="h5" component="div">
-                            <span className="item">{item.title}</span>
-                          </Typography>
-                          <Typography variant="body2" color="text.secondary">
-                            <label className="container">
-                              Status
-                              <input
-                                className="checkBox"
-                                type="checkbox"
-                                readOnly
-                                checked={item.completed}
-                              />
-                              <span className="checkmark"></span>
-                            </label>
-                          </Typography>
-                        </CardContent>
-                      </Link>
-                    </CardActionArea>
-                  </div>
-                </Card>
+                <StickyComponent showLink={true} item={item} />
               </Grid>
             ))}
           </Grid>
