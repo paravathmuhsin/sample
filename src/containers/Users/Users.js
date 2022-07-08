@@ -6,11 +6,14 @@ import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
 import Stack from "@mui/material/Stack";
 import { Link } from "react-router-dom";
+import { useAppContext } from "../../components/AppContextProvider/AppContextProvider";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
+  const { setAppTitle } = useAppContext();
 
   useEffect(() => {
+    setAppTitle('Users')
     getUsers().then((data) => {
       setUsers(data);
     });

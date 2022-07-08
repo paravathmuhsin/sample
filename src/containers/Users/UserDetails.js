@@ -8,12 +8,15 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import WebIcon from "@mui/icons-material/Web";
 import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
+import { useAppContext } from "../../components/AppContextProvider/AppContextProvider";
 
 const UserDetails = () => {
   const [userDetails, setUserDetails] = useState(null);
+  const { setAppTitle } = useAppContext();
   const { id } = useParams();
 
   useEffect(() => {
+    setAppTitle('User Details')
     getUsersDetails(id).then((data) => {
       setUserDetails(data);
     });
@@ -31,7 +34,7 @@ const UserDetails = () => {
               style={{ marginBottom: "20px", fontWeight: "600" }}
             >
               {userDetails.name}
-
+              <Link to={`/users`}>
               <Button
                 variant="contained"
                 endIcon={<SendIcon />}
@@ -39,6 +42,7 @@ const UserDetails = () => {
               >
                 View Users
               </Button>
+              </Link>
             </Typography>
             <Grid container spacing={{ xs: 2, md: 3 }} columns={{ md: 12 }}>
               <Grid item md={3}>
